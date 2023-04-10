@@ -10,8 +10,8 @@ theta = [0 10 15];
 %Initial conditions
 vi = 0;
 
-for i = 0:4
-    thetai = theta(1);
+for i = 1:3
+    thetai = theta(i);
     for ti = 0:0.1:8
     %For theta1
     %Determine dx1, dv1
