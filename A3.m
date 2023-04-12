@@ -5,10 +5,10 @@ clc
 lambda = [0.03, 0.05, 0.07, 0.09];
 l = 0.3365;
 h = 0.1;
-t_end = 80; % End time
+t_end = 8; % End time
 
 % Initial angles in degrees
-theta = [5, 10, 20];
+theta = [0, 10, 15];
 time = 0:h:t_end;
 theta_values = zeros(3, length(time), length(lambda));
 v_values = zeros(3, length(time), length(lambda));
