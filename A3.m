@@ -1,5 +1,4 @@
 clear
-clc
 %Define variables
 m = 0.3;
 t= 8;
