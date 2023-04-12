@@ -1,0 +1,49 @@
+clear
+%constants
+m = 0.3;
+t= 8;
+g = 9.81;
+r = 1;
+k = sqrt((m*g)/r);
+%thetas
+t1 = 0;
+t2 = 10;
+t3 = 15;
+
+%initialize row vectors for storing 
+time = 0:0.1:8;
+f1t1 = zeros(1,length(time));
+f1t2 = zeros(1,length(time));
+f1t3 = zeros(1,length(time));
+
+%evaluate position of the pendulum
+lambda1 = 0.05;
+for j = 1:length(time)
+    t = time(j);
+    %theta1
+    ft1 = f(t,t1,lambda1);
+    %Theta2
+    ft2 = f(t,t2,lambda1);
+    %Theta3
+    ft3 = f(t,t3,lambda1);
+    %store into vector
+    f1t1(j) = ft1;
+    f1t2(j) = ft2;
+    f1t3(j) = ft3;
+end
+
+%plot
+figure;
+subplot(2,1,1);
+hold on;
+for i = 
+
+function y = f(t,theta,lambda)
+m = 0.3;
+g = 9.81;
+r = 1;
+k = sqrt((m*g)/r);
+a = sqrt((k^2/m^2)-(lambda^2/(4*m^2)));
+
+y = theta*exp((-lambda*t)/(2*m))*(cosd(a*t)+(lambda/(2*m*a))*sind(a*t));
+end
