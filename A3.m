@@ -39,7 +39,7 @@ vi
 thetai
 
 % The system of ODEs for the pendulum
-function dydt = my_system(t,y)
+function dydt = my_system(y)
     m = 0.3;
     l = 0.3365;
     r = 1;
@@ -49,8 +49,8 @@ function dydt = my_system(t,y)
     r = 1;
     k = sqrt((m*g)/r);
     lambda = 0.05;
+    theta = y
     a = sqrt((k^2/m^2)-(lambda^2/(4*m^2)));
-    theta = t;
 
     % y(1) represents the original function y(t)
     % y(2) represents the first derivative v(t) = y'(t)
@@ -63,9 +63,9 @@ end
 
 % The RK4 method implementation for solving the ODEs
 function y_next = rk4_step(t, y, h, my_system)
-    k1 = h * my_system(t,y);
-    k2 = h * my_system(t,y + k1/2);
-    k3 = h * my_system(t,y + k2/2);
-    k4 = h * my_system(t,y + k3);
+    k1 = h * my_system(y);
+    k2 = h * my_system(y + k1/2);
+    k3 = h * my_system(y + k2/2);
+    k4 = h * my_system(y + k3);
     y_next = y + (k1 + 2*k2 + 2*k3 + k4)/6;
 end
