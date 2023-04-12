@@ -1,4 +1,5 @@
 clear
+clc
 %Define variables
 m = 0.3;
 t= 8;
@@ -18,7 +19,7 @@ theta_values = zeros(5, length(time));
 v_values = zeros(5, length(time));
 
 %Loop through initial angles
-for i = 1:5
+for i = 1:3
     vi = 0;
     thetai = theta(i);
     y = [thetai, vi]; % Initial condition for the ODE
@@ -54,11 +55,11 @@ function dydt = my_system(t,y)
 
     % y(1) represents the original function y(t)
     % y(2) represents the first derivative v(t) = y'(t)
-    ftheta = theta*exp((-lambda*t)/(2*m))*(cosd(a*t)+(lambda/(2*m*a))*sind(a*t));
-    dftheta = diff(ftheta);
+%     ftheta = theta*exp((-lambda*t)/(2*m))*(cosd(a*t)+(lambda/(2*m*a))*sind(a*t));
+%     dftheta = diff(ftheta);
     dydt = zeros(2, 1);
     dydt(1) = y(2); % y'(t) = v(t)
-    dydt(2) = ((-lambda*dftheta)/m)-((g*sind(theta))/r); % v'(t) = f(t, y(t), v(t))
+    dydt(2) = ((-lambda*y(2))/m)-((g*sind(y(1)))/r); % v'(t) = f(t, y(t), v(t))
 end
 
 % The RK4 method implementation for solving the ODEs
