@@ -91,6 +91,7 @@ for j = 1:length(time)
 end
 
 %plot 12 graphs for each initial theta and lambda value
+%lambda 1
 figure;
 subplot(2,1,1);
 hold on;
@@ -124,6 +125,107 @@ xlabel('Time (s)');
 title('Theta 3, Lambda 1 vs. Time');
 legend('15°');
 
+%lambda 2
+figure;
+subplot(2,1,1);
+hold on;
+plot(time, f2t1(1,:));
+
+% Labels and title for the first subplot
+ylabel('Theta1 (deg)');
+xlabel('Time (s)');
+title('Theta 1, Lambda 2 vs. Time');
+legend('0°');
+
+figure;
+subplot(2,1,1);
+hold on;
+plot(time, f2t2(1,:));
+
+% Labels and title for the first subplot
+ylabel('Theta2 (deg)');
+xlabel('Time (s)');
+title('Theta 2, Lambda 2 vs. Time');
+legend('10°');
+
+figure;
+subplot(2,1,1);
+hold on;
+plot(time, f2t3(1,:));
+
+% Labels and title for the first subplot
+ylabel('Theta3 (deg)');
+xlabel('Time (s)');
+title('Theta 3, Lambda 2 vs. Time');
+legend('15°');
+
+%lambda 3
+figure;
+subplot(2,1,1);
+hold on;
+plot(time, f3t1(1,:));
+
+% Labels and title for the first subplot
+ylabel('Theta1 (deg)');
+xlabel('Time (s)');
+title('Theta 1, Lambda 3 vs. Time');
+legend('0°');
+
+figure;
+subplot(2,1,1);
+hold on;
+plot(time, f3t2(1,:));
+
+% Labels and title for the first subplot
+ylabel('Theta2 (deg)');
+xlabel('Time (s)');
+title('Theta 2, Lambda 3 vs. Time');
+legend('0°');
+
+figure;
+subplot(2,1,1);
+hold on;
+plot(time, f3t3(1,:));
+
+% Labels and title for the first subplot
+ylabel('Theta3 (deg)');
+xlabel('Time (s)');
+title('Theta 3, Lambda 3 vs. Time');
+legend('0°');
+
+%lambda 4
+figure;
+subplot(2,1,1);
+hold on;
+plot(time, f4t1(1,:));
+
+% Labels and title for the first subplot
+ylabel('Theta1 (deg)');
+xlabel('Time (s)');
+title('Theta 1, Lambda 4 vs. Time');
+legend('0°');
+
+figure;
+subplot(2,1,1);
+hold on;
+plot(time, f4t2(1,:));
+
+% Labels and title for the first subplot
+ylabel('Theta2 (deg)');
+xlabel('Time (s)');
+title('Theta 2, Lambda 4 vs. Time');
+legend('0°');
+
+figure;
+subplot(2,1,1);
+hold on;
+plot(time, f4t3(1,:));
+
+% Labels and title for the first subplot
+ylabel('Theta3 (deg)');
+xlabel('Time (s)');
+title('Theta 3, Lambda 4 vs. Time');
+legend('0°');
 function y = f(t,theta,lambda)
 m = 0.3;
 g = 9.81;
