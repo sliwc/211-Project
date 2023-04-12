@@ -126,12 +126,12 @@ m = 0.3;
 g = 9.81;
 r = 1;
 k = sqrt((m*g)/r);
-a = sqrt((k^2/m^2)-(lambda^2/(4*m^2)));
+a = sqrt((k.^2/m.^2)-(lambda.^2/(4*m.^2)));
 e = exp((-lambda*t)/0.6);
-c = cosd(a*t);
+c = cos(a*t);
 s1 = lambda/(0.6*a);
-s2 = sind(a*t);
+s2 = sin(a*t);
 s = s1*s2;
-y = theta*e*c*s;
+y = theta*e*(c+s);
 
 end
